@@ -1,8 +1,34 @@
-# Curriculeon Maven Template
-* **Objective** - The purpose of this repository is to create a standard template to clone from when creating new projects.
+# Leonium Demonstration
+* The purpose of this repository is to demonstrate the use of [Leonium](https://github.com/Git-Leon/leonium), a `Selenium` wrapper framework.
 
-## How to use
-* To use this project as template, _clone_ the project into you `~/dev` directory.
-* Upon cloning, open the project in a text editor (VSCode, IntelliJ, SublimeText, Atom, etc.)
-* Ensure that the `artifactId` of the project is changed from `maven-template-project` to a more appropriate project name.
-* Click view the [`README-Sample.md`](./README-Sample.md) to view _how_ a `README` should be structured for a project.
+## Usage
+* This dependency is hosted on [packagecloud.io](https://packagecloud.io/git-leon/utils/)
+
+### Step 1 - Add Maven Repository to `pom.xml`
+* Because this dependency is hosted on a private server, not MavenCentral, the `pom.xml` must be configured to search in the proper repository.
+
+```xml
+<repositories>
+  <repository>
+    <id>git-leon-utils</id>
+    <url>https://packagecloud.io/git-leon/utils/maven2</url>
+    <releases>
+      <enabled>true</enabled>
+    </releases>
+    <snapshots>
+      <enabled>true</enabled>
+    </snapshots>
+  </repository>
+</repositories>
+```
+
+### Step 2 - Add Maven Dependency to `pom.xml`
+* To use this project, add the dependency to your `pom.xml`
+
+```xml
+<dependency>
+  <groupId>com.github.git-leon</groupId>
+  <artifactId>leonium</artifactId>
+  <version>2.4.1</version>
+</dependency>
+```
